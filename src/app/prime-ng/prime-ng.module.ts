@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import {MenuModule} from 'primeng/menu';
+import {ButtonModule} from 'primeng/button';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 
 
@@ -8,10 +10,14 @@ import {MenuModule} from 'primeng/menu';
 @NgModule({
   declarations: [],
   imports: [
-    MenuModule
+    MenuModule,
+    ButtonModule,
+    ProgressSpinnerModule
   ],
   exports: [
-    MenuModule
+    MenuModule,
+    ButtonModule,
+    ProgressSpinnerModule
   ]
 })
 export class PrimeNgModule { }

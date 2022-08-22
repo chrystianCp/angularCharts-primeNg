@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ChartData, ChartEvent, ChartType } from 'chart.js';
 
 @Component({
   selector: 'app-doughnut',
@@ -6,11 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class DoughnutComponent implements OnInit {
+export class DoughnutComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+   // Doughnut
+   public doughnutChartLabels: string[] = [ 'Download Sales', 'In-Store Sales', 'Mail-Order Sales' ];
+   public doughnutChartData: ChartData<'doughnut'> = {
+     labels: this.doughnutChartLabels,
+     datasets: [
+       { data: [ 350, 450, 100 ] },
+       { data: [ 50, 150, 120 ] },
+       { data: [ 250, 130, 70 ] }
+     ]
+   };
+   public doughnutChartType: ChartType = 'doughnut';
+ 
+  
 
 }

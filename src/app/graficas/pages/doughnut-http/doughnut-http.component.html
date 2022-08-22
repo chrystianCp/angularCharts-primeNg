@@ -1,1 +1,44 @@
-<p>doughnut-http works!</p>
+
+<div class="grid">
+    <div class="col">
+        <h1>httpDoughnut </h1>
+        <hr>
+    </div>
+</div> 
+
+<div class="grid"
+     *ngIf="this.doughnutChartData.datasets.length === 0; else divChart">
+    <p-progressSpinner class="col-12 flex-initial flex justify-content-center align-items-center "></p-progressSpinner>
+</div>  
+
+<ng-template #divChart>    
+<div class="grid">        
+    <div class="col-12 flex-initial flex justify-content-center">       
+            <div style="display: flex">
+                <canvas baseChart
+                    [data]="doughnutChartData"
+                    [type]="doughnutChartType">
+                </canvas>
+            </div>
+            <span>Informacion en billones de usuario</span>
+        </div>    
+    </div>
+</ng-template>        
+
+
+<!-- <div class="grid">
+    <div class="col">
+        <h1>Proporcion en ventas</h1>
+        <hr>
+    </div>
+</div>
+<div class="grid">    
+    <div class="col-8">
+        <div style="display: block">
+            <canvas baseChart
+            [data]="doughnutChartData"
+            [type]="doughnutChartType">
+            </canvas>
+        </div>
+    </div>
+</div>  -->

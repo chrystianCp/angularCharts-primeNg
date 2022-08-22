@@ -1,1 +1,14 @@
-<p>bar-chart works!</p>
+
+<div class="grid">    
+    <div class="col-10">
+        <div style="display: block">
+            <canvas baseChart
+                    [data]="barChartData"
+                    [options]="barChartOptions"              
+                    [type]="barChartType">                    
+            </canvas>
+            <button pButton type="button" icon="pi pi-sync" label="Update"></button>
+        </div>
+    </div>
+</div>
+

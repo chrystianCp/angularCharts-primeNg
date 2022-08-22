@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GraficasService } from '../../services/graficas.service';
+import { ChartData, ChartType } from 'chart.js';
+
 
 @Component({
   selector: 'app-doughnut-http',
@@ -8,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoughnutHttpComponent implements OnInit {
 
-  constructor() { }
+   // Doughnut
+   public doughnutChartType: ChartType = 'doughnut';
+   public doughnutChartLabels: string[] = [];
+   public doughnutChartData: ChartData<'doughnut'> = {
+     labels: [],
+     datasets: []
+   };
+
+  constructor( private gs: GraficasService ) { }
 
   ngOnInit(): void {
-  }
-
+    this.gs.getuUsersSM()
+        .subscribe( ({labels, values}) => {
+          this.doughnutChartData.labels = labels;
+          this.doughnutChartData.datasets = values;
+        });             
+  }   
 }

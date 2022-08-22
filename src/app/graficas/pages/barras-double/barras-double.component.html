@@ -1,1 +1,17 @@
-<p>barras-double works!</p>
+
+<div class="grid">
+    <div class="col">
+        <h1>Graficas dobles</h1>
+        <hr>
+    </div>
+</div>
+<div class="grid">        
+    <div class="col-5">        
+        <app-bar-chart [horizontal]="true"
+                       [barChartData]="proveedoresData">
+    </app-bar-chart>
+    </div>
+    <div class="col-5">        
+        <app-bar-chart [barChartData]="productoData"></app-bar-chart>
+    </div>
+</div>
